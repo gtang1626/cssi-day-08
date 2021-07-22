@@ -9,11 +9,11 @@ const getMessages = () => {
         let found = false;
         
         for (let key in data) {
-            if (key === passcode.value){
+            if (data[key].passcode === passcode.value){
                 console.log("match found")
                 const message = document.querySelector("#message")
                 message.style.color = "#000000"
-                message.innerHTML = data[key]
+                message.innerHTML = data[key].message;
                 found = true
             }
         }
@@ -26,13 +26,13 @@ const getMessages = () => {
             failedAttempts ++;
             console.log(failedAttempts);  
            
-            /*
+            
             if (failedAttempts > 3){
                 console.log("Wait");
                 let waitMinutes = failedAttempts - 3;
-                
+                //hide input box for 60*waitMinutes seconds
             } 
-            */
+            
         }
 
         passcode.value = "";
