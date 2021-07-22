@@ -10,7 +10,6 @@ const getMessages = () => {
         
         for (let key in data) {
             if (data[key].passcode === passcode.value){
-                console.log("match found")
                 const message = document.querySelector("#message")
                 message.style.color = "#000000"
                 message.innerHTML = data[key].message;
@@ -19,7 +18,6 @@ const getMessages = () => {
         }
 
         if (found === false){
-            console.log("match not found")
             const message = document.querySelector("#message")
             message.style.color = "#ff0000"
             message.innerHTML = "Message not found"  
@@ -28,8 +26,6 @@ const getMessages = () => {
            
             
             if (failedAttempts > 3){
-                console.log("Wait");
-                let waitMinutes = failedAttempts - 3;
                 //hide input box for 60*waitMinutes seconds
             } 
             

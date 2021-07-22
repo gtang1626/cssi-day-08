@@ -7,4 +7,7 @@ const onSubmit = () => {
     }
 
     firebase.database().ref().push(payload);
+
+    document.querySelector("#passcode").value = "";
+    document.querySelector("#message").value = "";
 }
